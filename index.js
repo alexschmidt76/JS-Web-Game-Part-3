@@ -33,7 +33,7 @@ function newItem(url, left, bottom){
         item.remove()
         let inventoryItem = document.createElement('img')
         inventoryItem.src = url;
-        document.querySelector('.inventory').append(inventoryItem)
+        document.getElementById('inventory').append(inventoryItem)
     })
     return item
 }
@@ -44,7 +44,7 @@ move(newItem('assets/staff.png')).to(600, 250)
 
 function newInventory(){
     let inventory = document.createElement('div')
-    inventory.className = 'inventory'
+    inventory.id = 'inventory'
     inventory.style.width = '100%'
     inventory.style.height = '100px'
     inventory.style.display = 'flex'
@@ -57,4 +57,5 @@ function newInventory(){
     return inventory
 }
 
-move(newInventory()).to(0, 0)
+const inventory = newInventory()
+move(inventory).to(0, 0)
